@@ -1,0 +1,1167 @@
+@charset "ISO-8859-1";
+
+
+
+html {
+	min-height: 100%;
+}
+
+
+blockquote {
+
+}
+
+/* von ubr2020_angebot.css - 06.01.2020 - JKL */
+
+@charset "iso-8859-1";
+
+:root
+{
+/*>>> LLB-Farben >>>*/
+ --farbe_basis:                   #FC0;
+ --farbe_basis_1:                 #FC0;
+ --farbe_schrift:                 #000;
+ --farbe_hintergrund:             #FFF;
+
+ --farbe_header_schrift:          #666;
+ --farbe_form_footer_hintergrund: #FFF3E0;
+
+ --farbe_error_schrift:           #F00;
+ --farbe_error_hintergrund:       #FFF;
+ --farbe_warning_schrift:         #00F;
+ --farbe_warning_hintergrund:     #FFF;
+
+ --farbe_feld_hintergrund:        #FFF;
+ --farbe_feld_schrift_disabled:   #696969;
+ --farbe_feld_hintergr_disabled:  #EFEFEF;
+
+ --farbe_anchor_schrift:          #666;
+
+ --farbe_button:                  #F49E00;
+ --farbe_button_schrift:          #FFF;
+ --farbe_button_rahmen:           #F49E00;
+ --farbe_button_disabled:         #FFC567;
+ --farbe_button_schrift_disabled: #FFF;
+ --farbe_button_hover:            #FFF;
+ --farbe_button_hover_schrift:    #F49E00;
+
+ --farbe_tab_ueber_hintergr:      #666;
+ --farbe_tab_ueber_schrift:       #FFF;
+ --weight_tab_ueber_schrift:      normal;
+ --farbe_tab_ueber_rahmen:        #DEDEDE;
+ --farbe_tab_zeile_hintergr_1:    #FFF;
+ --farbe_tab_zeile_hintergr_2:    #EFEFEF;
+ --farbe_tab_zeile_schrift:       #000;
+ --farbe_tab_zeile_rahmen:        #DEDEDE;
+ --farbe_tab_zeile_selected:      #FEE1B2;
+/*<<< LLB-Farben <<<*/
+
+/*>>> PR-Farben >>>
+ --farbe_basis:                   #9CCE63;
+ --farbe_basis_1:                 #9CCE63;
+ --farbe_schrift:                 #000;
+ --farbe_hintergrund:             #FFF;
+
+ --farbe_header_schrift:          #004A39;
+ --farbe_form_footer_hintergrund: #EEE;
+
+ --farbe_error_schrift:           #F00;
+ --farbe_error_hintergrund:       #FFF;
+ --farbe_warning_schrift:         #00F;
+ --farbe_warning_hintergrund:     #FFF;
+
+ --farbe_feld_hintergrund:        #FFF;
+ --farbe_feld_schrift_disabled:   #696969;
+ --farbe_feld_hintergr_disabled:  #EFEFEF;
+
+ --farbe_anchor_schrift:          #666;
+
+ --farbe_button:                  #9CCE63;
+ --farbe_button_schrift:          #000;
+ --farbe_button_rahmen:           #000;
+ --farbe_button_disabled:         #CEE7B5;
+ --farbe_button_schrift_disabled: #597979;
+ --farbe_button_hover:            #9CCE63;
+ --farbe_button_hover_schrift:    #FFF;
+
+ --farbe_tab_ueber_hintergr:      #004A39;
+ --farbe_tab_ueber_schrift:       #DEDEDE;
+ --weight_tab_ueber_schrift:      normal;
+ --farbe_tab_ueber_rahmen:        #DEDEDE;
+ --farbe_tab_zeile_hintergr_1:    #FFF;
+ --farbe_tab_zeile_hintergr_2:    #EFEFEF;
+ --farbe_tab_zeile_schrift:       #000;
+ --farbe_tab_zeile_rahmen:        #DEDEDE;
+ --farbe_tab_zeile_selected:      #CEE7B5;
+<<< PR-Farben <<<*/
+
+/*>>> SPK-Farben >>>
+ --farbe_basis:                   #F99;
+ --farbe_basis_1:                 #933;
+ --farbe_schrift:                 #000;
+ --farbe_hintergrund:             #F5F5F5;
+
+ --farbe_header_schrift:          #666;
+ --farbe_form_footer_hintergrund: #EEE;
+
+ --farbe_error_schrift:           #F00;
+ --farbe_error_hintergrund:       #F5F5F5;
+ --farbe_warning_schrift:         #00F;
+ --farbe_warning_hintergrund:     #F5F5F5;
+
+ --farbe_feld_hintergrund:        #FFF;
+ --farbe_feld_schrift_disabled:   #696969;
+ --farbe_feld_hintergr_disabled:  #EFEFEF;
+
+ --farbe_anchor_schrift:          #666;
+
+ --farbe_button:                  #CCC;
+ --farbe_button_schrift:          #000;
+ --farbe_button_rahmen:           #FFF;
+ --farbe_button_rahmen_1:         #000;
+ --farbe_button_disabled:         #CCC;
+ --farbe_button_schrift_disabled: #999;
+ --farbe_button_hover:            #CCC;
+ --farbe_button_hover_schrift:    #FFF;
+
+ --farbe_tab_ueber_hintergr:      #EEE;
+ --farbe_tab_ueber_schrift:       #000;
+ --weight_tab_ueber_schrift:      bold;
+ --farbe_tab_ueber_rahmen:        #FFF;
+ --farbe_tab_zeile_hintergr_1:    #EEE;
+ --farbe_tab_zeile_hintergr_2:    #F5F5F5;
+ --farbe_tab_zeile_schrift:       #000;
+ --farbe_tab_zeile_rahmen:        #FFF;
+ --farbe_tab_zeile_selected:      #FFEEAA;
+<<< SPK-Farben <<<*/
+}
+/**********************************************************/
+*
+{
+ font:             10pt arial,helvetica,sans-serif;
+ color:            #000; /* fallback */
+ color:            var(--farbe_schrift);
+ background-color: #FFF; /* fallback */
+ background-color: var(--farbe_hintergrund);
+ box-sizing:       content-box;
+}
+
+
+body2{
+	width: 900px;
+	margin: 0 auto;
+}
+
+body
+{
+ padding-top:      0px;
+ padding-left:     21px;
+ padding-bottom:   11px;
+ padding-right:    36px;
+}
+form
+{
+ padding-bottom:   60px;
+}
+section
+{
+ background-color: none;
+ margin-top:       15px;
+ min-width:        680px;
+ max-width:        765px;
+}
+#id_frm_internedaten section
+{
+ min-width:        inherit;
+}
+main > section:first-child
+{
+ margin-top:       0px;
+}
+.grid_1  {width:   60px;}
+.grid_2  {width:   140px;}
+.grid_3  {width:   220px;}
+.grid_4  {width:   300px;}
+.grid_5  {width:   380px;}
+.grid_6  {width:   460px;}
+.grid_7  {width:   540px;}
+.grid_8  {width:   620px;}
+.grid_9  {width:   700px;}
+.grid_max{width:   99%;}
+
+.grid_1, .grid_2, .grid_3, .grid_4, .grid_5,
+.grid_6, .grid_7, .grid_8, .grid_9, grid_max
+{
+ margin-left:      0px;
+ margin-right:     20px;
+ float:            left;
+}
+.grid_ende
+{
+ margin-right:     0px;
+}
+b
+{
+ font-weight:      bold;
+}
+fieldset
+{
+ margin-top:       8px;
+ border:           1px solid #FC0; /* fallback */
+ border-top:       1px solid var(--farbe_basis);
+ border-left:      1px solid var(--farbe_basis);
+ border-bottom:    1px solid var(--farbe_basis_1);
+ border-right:     1px solid var(--farbe_basis_1);
+ padding-top:      8px;
+ padding-left:     12px;
+ padding-bottom:   8px;
+ padding-right:    8px;
+ background-color: none; /* fallback */
+ background-color: var(--farbe_hintergrund);
+}
+
+.fieldset_row
+{
+ clear:            both;
+}
+.fieldset_block
+{
+ margin-bottom:    20px;
+ clear:            both;
+}
+.fieldset_block section
+{
+ margin-top:       0px;
+}
+fieldset + .fieldset_row
+{
+ margin-top:       10px;
+}   
+.cursor_wait
+{
+cursor:            url('../img/wait_rotation.gif') 10 50, wait;    
+}
+/*******************/
+/*** CSS - Label ***/
+/*******************/
+label
+{
+ display:          inline-block;
+ width:            240px;
+}
+fieldset fieldset label
+{
+ width:            225px;
+}
+input.label_prefix + label,
+span.label_prefix + label
+{
+ display:          inline-block;
+ width:            210px;
+ vertical-align:   baseline;
+}
+label.checkbox_label
+{
+ display:          inline-block;
+}
+label.checkbox_label_prefix
+{
+ display:          inline-block;
+ width:            inherit;
+ margin-left:      inherit;
+ margin-right:     5px;
+ vertical-align:   baseline;
+}
+#id_frm_internedaten label
+{
+ display:          inline-block;
+ width:            130px;
+ vertical-align:   baseline;
+}
+
+#id_sec_vnIdentifizierung
+{
+ margin-top:       15px;
+}
+#id_sec_geldwaeschegesetz label,
+#id_sec_vnIdentifizierung label,
+#id_sec_personenerfassung label
+{
+ margin-left:      5px;
+ width:            300px;
+}
+#id_sec_vnNichtIdentifiziert label
+{
+ margin-left:      0px;
+ width:            290px;
+}
+.label_prefix
+{
+ display:          inline-block;
+ width:            25px;
+ vertical-align:   baseline;
+ margin-top:       0px;
+ margin-left:      0px;
+ margin-right:     0px;
+}
+/***********************/
+/*** CSS - Meldungen ***/
+/***********************/
+.error_form *,
+.error_field *
+{
+ background:       #FFF; /* fallback */
+ background:       var(--farbe_error_hintergrund);
+ color:            #F00; /* fallback */
+ color:            var(--farbe_error_schrift);
+ font-weight:      bold;
+}
+.warning_form *,
+.warning_field *
+{
+ background:       #FFF; /* fallback */
+ background:       var(--farbe_warning_hintergrund);
+ color:            #00F; /* fallback */
+ color:            var(--farbe_warning_schrift);
+ font-weight:      bold;
+}
+.error_block,
+.warning_block
+{
+ margin-top:       0px;
+ margin-left:      0px;
+ margin-bottom:    0px;
+ margin-right:     0px;
+ clear:            both;
+}
+/*******************/
+/*** CSS - Input ***/
+/*******************/
+input
+{
+ background:       #FFF; /* fallback */
+ background:       var(--farbe_feld_hintergrund);
+ margin-top:       3px;
+ margin-bottom:    3px;
+}
+input[type="date"]
+{
+ width:            auto;
+}
+input[type="checkbox"]
+{
+ margin-top:       9px;
+ margin-bottom:    9px;
+ margin-right:     19px;
+}
+input:disabled
+{
+ background:       #EFEFEF; /* fallback */
+ background:       var(--farbe_feld_hintergr_disabled);
+ color:            #696969; /* fallback */
+ color:            var(--farbe_feld_schrift_disabled);
+}
+input[value]:disabled
+{
+ background:       #EFEFEF; /* fallback */
+ background:       var(--farbe_feld_hintergr_disabled);
+ color:            #696969; /* fallback */
+ color:            var(--farbe_feld_schrift_disabled);
+}
+input.disabled
+{
+ color:            #696969; /* fallback */
+ color:            var(--farbe_feld_schrift_disabled);
+}
+input:-moz-read-only
+{ /* Firefox */
+ background:       #EFEFEF; /* fallback */
+ background:       var(--farbe_feld_hintergr_disabled);
+}
+input:read-only
+{
+ background:       #EFEFEF; /* fallback */
+ background:       var(--farbe_feld_hintergr_disabled);
+}
+input[readonly]
+{
+ background:       #EFEFEF; /* fallback */
+ background:       var(--farbe_feld_hintergr_disabled);
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button
+{
+  /* display: none; <- Crashes Chrome on hover */
+ -webkit-appearance: none;
+ margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+input[type=number]
+{ /* Firefox */
+ -moz-appearance:  textfield;
+}
+/******************************/
+/*** CSS - Input - Checkbox ***/
+/******************************/
+input.cbox ~ label
+{
+ width:            inherit;
+ height:           inherit;
+ margin-left:      inherit;
+ margin-top:       8px;
+ margin-bottom:    8px;
+ margin-right:     19px;
+}
+input.cbox ~ label:before
+{
+ display:          inline-block;
+ background-color: #FFF; /* fallback */
+ background-color: var(--farbe_hintergrund);
+ font:             8pt/1em arial,helvetica,sans-serif;
+ width:            10px;
+ height:           10px;
+ border:           1px solid #333;
+ content:          "\00a0";
+ padding:          1px;
+}
+input.cbox:checked ~ label:before
+{
+ display:          inline-block;
+ background-color: #FFF; /* fallback */
+ background-color: var(--farbe_hintergrund);
+ font:             8pt/1em arial,helvetica,sans-serif;
+ width:            10px;
+ height:           10px;
+ border:           1px solid #333;
+ content:          "\2714";
+ padding:          1px;
+}
+input.cbox:read-only ~ label:before
+{
+ background:       #EFEFEF; /* fallback */
+ background:       var(--farbe_feld_hintergr_disabled);
+}
+input.cbox[readonly] ~ label:before
+{
+ background:       #EFEFEF; /* fallback */
+ background:       var(--farbe_feld_hintergr_disabled);
+}
+/********************/
+/*** CSS - Select ***/
+/********************/
+select
+{
+ background:       #FFF; /* fallback */
+ background:       var(--farbe_feld_hintergrund);
+ margin-bottom:    3px;
+ margin-top:       3px;
+}
+select:disabled
+{
+ background:       #EFEFEF; /* fallback */
+ background:       var(--farbe_feld_hintergr_disabled);
+ color:            #696969; /* fallback */
+ color:            var(--farbe_feld_schrift_disabled);
+}
+select:read-only
+{
+ background:       #EFEFEF; /* fallback */
+ background:       var(--farbe_feld_hintergr_disabled);
+}
+select[readonly]
+{
+ background:       #EFEFEF; /* fallback */
+ background:       var(--farbe_feld_hintergr_disabled);
+}
+/**********************/
+/*** CSS - Textarea ***/
+/**********************/
+textarea
+{
+ background:       #FFF; /* fallback */
+ background:       var(--farbe_feld_hintergrund);
+ margin-bottom:    20px;
+ margin-top:       4px;
+ width: 15vw;
+ height: 3vh;
+}
+
+#TwoZelTable{
+ background:       #FFF; /* fallback */
+ background:       var(--farbe_feld_hintergrund);
+ margin-bottom:    20px;
+ margin-top:       1px;
+ width: 42vw;
+ height: 4vh;
+}
+
+#OneZelTable{
+ background:       #FFF; /* fallback */
+ background:       var(--farbe_feld_hintergrund);
+ margin-bottom:    20px;
+ margin-top:       1px;
+ width: 46vw;
+ height: 4vh;
+}
+
+.OneZellTable{
+ background:       #FFF; /* fallback */
+ background:       var(--farbe_feld_hintergrund);
+ margin-bottom:    20px;
+ margin-top:       1px;
+ width: 47vw;
+ height: 4vh;
+}
+
+.comments { width: 300px; height: 75px}
+
+
+textarea:disabled
+{
+ background:       #EFEFEF; /* fallback */
+ background:       var(--farbe_feld_hintergr_disabled);
+ color:            #696969; /* fallback */
+ color:            var(--farbe_feld_schrift_disabled);
+}
+/********************/
+/*** CSS - Button ***/
+/********************/
+buttonUBR
+{
+ display:          inline-block;
+ font:             9pt arial, helvetica, sans-serif;
+ margin:           4px 4px 4px 4px;
+ padding:          1px 7px 1px 7px;
+ text-decoration:  none;
+ white-space:      nowrap;
+/*>>> LLB >>>*/
+ border-style:     solid;
+ border-color:     white;
+ border-width:     1.5px 0 0 1.5px;
+ outline:          1px solid #F49E00;
+ outline:          1px solid var(--farbe_button_rahmen);
+/*<<< LLB <<<*/
+/*>>> PR >>>
+ height:           17px;
+ border:           1px solid var(--farbe_button_rahmen);
+ border-radius:    3px;
+<<< PR <<<*/
+/*>>> SPK >>>
+ height:           17px;
+ border-top:       1px solid var(--farbe_button_rahmen);
+ border-left:      1px solid var(--farbe_button_rahmen);
+ border-bottom:    1px solid var(--farbe_button_rahmen_1);
+ border-right:     1px solid var(--farbe_button_rahmen_1);
+<<< SPK <<<*/
+}
+button:disabled,
+button:disabled *
+{
+ background:       #FFC567;
+ background:       var(--farbe_button_disabled);
+ color:            #FFF; /* fallback */
+ color:            var(--farbe_button_schrift_disabled);
+}
+button:not([disabled]),
+button:not([disabled]) *
+{
+ background:       #F49E00; /* fallback */
+ background:       var(--farbe_button);
+ color:            #FFF; /* fallback */
+ color:            var(--farbe_button_schrift);
+}
+button:disabled:hover,
+button:disabled:hover *
+{
+ color:            #FFF; /* fallback */
+ color:            var(--farbe_button_schrift_disabled);
+ cursor:           text;
+}
+button:not([disabled]):hover,
+button:not([disabled]):hover *
+{
+ color:            #F49E00; /* fallback */
+ color:            var(--farbe_button_hover_schrift);
+ background:       #FFF; /* fallback */
+ background:       var(--farbe_button_hover);
+ /*border-color:     var(--farbe_button_hover_schrift);*/
+}
+/********************/
+/*** CSS - Anchor ***/
+/********************/
+a.info
+{
+ background:       url('../img/info_i.gif') no-repeat left;
+ color:            #666; /* fallback */
+ color:            var(--farbe_header_schrift);
+ font-size:        10pt;
+ font-weight:      bold;
+ margin-left:      8px;
+ text-decoration:  none;
+ margin-bottom:    3px;
+ padding-left:     19px;
+}
+a.info_detail
+{
+ background:       url('../img/info_i_detail.gif') no-repeat right;
+ width:            18px;
+ height:           10px;
+ display:          inline-block;
+
+}
+a.calendar
+{
+ background:       url('../img/calendar.gif') no-repeat left;
+ font-size:        10pt;
+ font-weight:      bold;
+ margin-left:      8px;
+ text-decoration:  none;
+ margin-bottom:    3px;
+ padding-left:     19px;
+}
+/********************/
+/*** CSS - Header ***/
+/********************/
+headerLLB
+{
+ min-width:        680px;
+ max-width:        750px;
+ margin-bottom:    3px;
+}
+
+headerOO, header h1
+{
+ color:            #666; /* fallback */
+ color:            var(--farbe_header_schrift);
+ font-size:        10pt;
+ font-weight:      bold;
+ text-decoration:  none;
+ margin-top:       0px;
+ margin-left:      3px;
+ margin-bottom:    0px;
+}
+header h1
+{
+ display:          inline-block;
+}
+header.fieldset_row
+{
+ color:            #000; /* fallback */
+ color:            var(--farbe_schrift);
+ font-weight:      normal;
+ margin-bottom:    10px;
+}
+section header h1
+{
+ margin-left:      8px;
+}
+section section header.fieldset_row
+{
+ font-weight:      normal;
+ margin-left:      0px;
+}
+#id_header_angNummer
+{
+ float:            right;
+}
+#id_header_form
+{
+ min-width:        600px;
+ margin-top:       10px;
+}
+#id_sec_vnNichtIdentifiziert header
+{
+ font-weight:      bold;
+ color:            red;
+}
+
+/********************/
+/*** CSS - Topp ***/
+/********************/
+Under
+{
+ min-width:        2px;
+ max-width:        1000px;
+/* margin-top:       1px;*/
+ margin-bottom:    1px;
+}
+
+Topp
+{
+ min-width:        2px;
+ max-width:        1000px;
+ margin-top:       1px;
+ margin-bottom:    6px;
+}
+
+.form_footerLLB
+{
+ min-width:        600px;
+ background:       #FFF3E0;
+ background:       var(--farbe_form_footer_hintergrund);
+ margin-bottom:    0px;
+}
+#id_form_footer
+{
+ clear:            both;
+ position:         fixed;
+ padding:          4px 25px 4px 28px;
+ bottom:           0;
+ left:             0;
+ right:            0;
+ overflow:         hidden;
+}
+/***************************/
+/*** CSS - Field-Classes ***/
+/***************************/
+#text
+{
+ margin-left:      40px;
+}
+.field_xxs
+{
+ width:            20px;
+}
+.field_xs
+{
+ display:          inline-block;
+ width:            40px;
+}
+.field_d /* normales Feld in Date-Länge */
+{
+ width:            70px;
+}
+.field_s
+{
+ display:          inline-block;
+ width:            80px;
+}
+select.field_s
+{
+ width:            calc(80px + 2px);
+}
+.field_sm
+{
+ width:            120px;
+}
+.field_m
+{
+ width:            160px;
+}
+select.field_m
+{
+ width:            calc(160px + 2px);
+}
+.field_l
+{
+ width:            240px;
+}
+select.field_l
+{
+ width:            calc(270px + 2px);
+}
+.field_xl
+{
+ width:            320px;
+}
+.field_xl.plus_1_trenner
+{
+ width:            calc(320px + 9px); 
+}
+.field_xxl
+{
+ width:            400px;
+}
+.field_xxl.plus_1_trenner
+{
+ width:            calc(400px + 9px);
+}
+.field_xxxl
+{
+ max-width:        470px;
+ width:            62%;
+}
+.field_max
+{
+ width:            95%;
+}
+.field_num_xs
+{
+ width:            40px;
+ text-align:       right;
+}
+.field_num_xxs
+{
+ width:            20px;
+ text-align:       right;
+}
+.field_num_s
+{
+ width:            80px;
+ text-align:       right;
+}
+.field_num_m
+{
+ width:            160px;
+ text-align:       right;
+}
+.iban
+{
+ width:            175px;
+}
+.bic
+{
+ width:            175px;
+}
+.date
+{
+ width:            70px;
+}
+
+/**********************/
+/*** CSS - Tabellen ***/
+/**********************/
+.table
+{
+ display:          table;
+ border-collapse:  collapse;
+ text-align:       left;
+ table-layout:     auto;
+ font:             10pt arial,helvetica,sans-serif;
+ padding-top:      3px;
+ padding-left:     0px;
+ padding-bottom:   3px;
+ padding-right:    5px;
+}
+table.doFix
+{
+ display:          table;
+ border-collapse:  collapse;
+ text-align:       left;
+ table-layout:     auto;
+ font:             10pt arial,helvetica,sans-serif;
+ padding-top:      3px;
+ padding-left:     0px;
+ padding-bottom:   3px;
+ padding-right:    5px;
+}
+#id_frm_partnerdaten #id_tab_vp
+{
+ border-collapse:  separate;
+ border-spacing:   0px;
+}
+.trh
+{
+ display:          table-header-group;
+}
+.trf
+{
+ padding-top:      10px;
+ display:          table-footer-group;
+}
+.trg
+{
+ display:          table-row-group;
+}
+.tr
+{
+ display:          table-row;
+}
+.th
+{
+ display:          table-cell;
+ background:       #666; /* fallback */
+ background:       var(--farbe_tab_ueber_hintergr);
+ color:            #FFF; /* fallback */
+ color:            var(--farbe_tab_ueber_schrift);
+ font-weight:      normal; /* fallback */
+ font-weight:      var(--weight_tab_ueber_schrift);
+ border:           1px solid #DEDEDE; /* fallback */
+ border:           1px solid var(--farbe_tab_ueber_rahmen);
+ vertical-align:   middle;
+ padding:          3px 6px 2px;
+ overflow:         hidden;
+}
+.tr:nth-child(odd)
+{
+ background:       #FFF; /* fallback */
+ background:       var(--farbe_tab_zeile_hintergr_1);
+}
+.tr:nth-child(even)
+{
+ background:       #EFEFEF; /* fallback */
+ background:       var(--farbe_tab_zeile_hintergr_2);
+}
+.td
+{
+ display:          table-cell;
+ vertical-align:   middle;
+ border:           1px solid #DEDEDE; /* fallback */
+ border:           1px solid var(--farbe_tab_zeile_rahmen);
+ padding:          3px 6px 2px;
+ overflow:         hidden;
+}
+.td a
+{
+  color:            blue;
+}
+.trg .tr:hover *
+{
+ cursor:           pointer;
+ /*font-weight:      bold;*/
+}
+.trg .tr.selected *
+{
+ background:       #FEE1B2; /* fallback */
+ background:       var(--farbe_tab_zeile_selected);
+}
+.trf .tr .td
+{
+ display:          table-cell;
+ margin-left:      3px;
+ border-top:       none; /* fallback */
+ border-left:      1px solid #FC0; /* fallback */
+ border-bottom:    1px solid #FC0; /* fallback */
+ border-right:     1px solid #FC0; /* fallback */
+ border-top:       none;
+ border-left:      1px solid var(--farbe_tab_zeile_rahmen);
+ border-bottom:    1px solid var(--farbe_tab_zeile_rahmen);
+ border-right:     1px solid var(--farbe_tab_zeile_rahmen);
+ vertical-align:   middle;
+ padding:          3px 6px 2px;
+ overflow:         hidden;
+}
+/*****************/
+/*** CSS - IDs ***/
+/*****************/
+#id_label_abweichungGruppe,
+#id_label_gefgruppe_text,
+#id_label_erkrankungsart_kapital,
+#id_label_erkrankungsart_todesfall,
+#id_label_bestandskonto,
+#id_label_teilnehmer
+{
+ margin-top:       6px;
+ vertical-align:   top;
+}
+#id_sec_vnNichtIdentifiziert
+{
+ margin-top:       0px;
+}
+/********************************/
+/*** CSS - Button "Allgemein" ***/
+/********************************/
+#id_but_vn_uebernehmen_vp,
+#id_but_sucheVp,
+#id_but_addperson,
+#id_but_del_vp,
+#id_but_add_vp,
+#id_but_berechnen,
+#id_but_berechnen_gesamt,
+#id_but_entfernen
+{
+ float: right;
+}
+/****************************************/
+/*** CSS - Button in der Buttonleiste ***/
+/****************************************/
+#id_buttonleiste
+{
+ clear: both;
+}
+#id_buttonleiste #id_but_abbrechen,
+#id_buttonleiste #id_but_beenden,
+#id_buttonleiste #id_but_speichern,
+#id_buttonleiste #id_but_drucken,
+#id_buttonleiste #id_but_zurueck,
+#id_buttonleiste #id_but_weiter,
+#id_buttonleiste #id_but_pdf,
+#id_buttonleiste #id_but_send
+{
+ float: right;
+}  
+
+#id_buttonleiste #id_but_linksen
+{
+ float: left;
+}
+ 
+/*************************************/
+/*** CSS - Button Form "Bankdaten" ***/
+/*************************************/
+#id_frm_bankdaten #id_but_getBankdatenIban,
+#id_frm_bankdaten #id_but_getBankdatenKtoBlz,
+#id_frm_bankdaten #id_but_zurueck_bd,
+#id_frm_bankdaten #id_but_del_vorversicherng
+{
+ float: right;
+}
+/*****************************************/
+/*** CSS - Button Form "Prämienzahler" ***/
+/*****************************************/
+#id_frm_praemienzahler #id_but_zurueck,
+#id_frm_praemienzahler #id_but_uebernehmen
+{
+ float: right;
+}
+/*************************************/
+/*** CSS - Button Form "Abschluss" ***/
+/*************************************/
+#id_buttonleiste_abschluss #id_but_interneDaten,
+#id_buttonleiste_abschluss #id_but_interneDaten_icis,
+#id_buttonleiste_abschluss #id_but_email,
+#id_buttonleiste_abschluss #id_but_drucken,
+#id_buttonleiste_abschluss #id_but_unterschreiben,
+#id_buttonleiste_abschluss #id_but_senden
+{
+ float: right;
+}
+
+.flexbox{
+ display:          inline-block;
+ width:            210px;
+ vertical-align:   baseline;
+}
+
+
+.flexelement{    
+    text-align: center;
+    margin: 10px;
+    padding: 15px 0 15px 0;
+    float: left;
+}
+
+.clearing{
+    clear:left;
+}
+
+
+header
+{
+ position: 		   absolute;
+ min-width:        10px;
+ max-width:        750px;
+ background:       #FFF3E0;
+ background:       var(--farbe_form_footer_hintergrund);
+ margin-bottom:    3px;
+ margin-left:	   600px;
+}
+
+
+.form_footerLeft
+{
+ position: absolute;
+
+ margin-left:0px;
+ margin-top: 9px;
+ min-width:        0px;
+ max-width: 600px;
+ background:       #FFF3E0;
+ background:       var(--farbe_form_footer_hintergrund);
+}
+
+#btn1{
+ display:          inline-block;
+ font:             9pt arial, helvetica, sans-serif;
+ margin:           1px 1px 1px 1px;
+ padding:          1px 695px 1px 20px;
+ text-decoration:  none;
+ white-space:      nowrap;
+/*>>> LLB >>>*/
+ border-style:     solid;
+ border-color:     white;
+ border-width:     1.5px 0 0 1.5px;
+ outline:          1px solid #F49E00;
+ outline:          1px solid var(--farbe_button_rahmen);
+}
+
+
+.form_footerLeftTest
+{
+ position: absolute; 
+ margin-left:0px;
+ margin-top: 23px;
+ min-width:        0px;
+ max-width: 900px;
+ background:       #FFF3E0;
+ background:       var(--farbe_form_footer_hintergrund);
+}
+
+.middleScript{
+    position:absolute;
+    left:50%;
+    top:50%;
+}
+
+.middleScreenAnfDienstfahr{
+    position:absolute;
+    width:780px;
+    height:650px;
+    	min-width: 700px;
+	max-width: 1000px;
+    left:50%;
+    top:50%;
+    margin-left:-390px;
+    margin-top:-352px;
+}
+
+
+bottomScreenAnfDienstfahr{   
+    position:absolute;
+    top: 100;    
+    bottom: 0;
+    width: 100%;
+    background-color: yellow;
+}
+
+button{
+ display:          inline-block;
+ font:             9pt arial, helvetica, sans-serif;
+ margin:           4px 4px 4px 4px;
+ padding:          1px 70px 1px 20px;
+ text-decoration:  none;
+ white-space:      nowrap;
+/*>>> LLB >>>*/
+ border-style:     solid;
+ border-color:     white;
+ border-width:     1.5px 0 0 1.5px;
+ outline:          1px solid #F49E00;
+ outline:          1px solid var(--farbe_button_rahmen);
+}
+
+#buttonLeft{
+ display:          inline-block;
+ font:             9pt arial, helvetica, sans-serif;
+ height:			100px;
+ width: 200px;
+ margin:           4px 4px 4px 4px;
+ padding:          1px 70px 1px 20px;
+ text-decoration:  none;
+ white-space:      nowrap;
+/*>>> LLB >>>*/
+ border-style:     solid;
+ border-color:     white;
+ border-width:     1.5px 0 0 1.5px;
+ outline:          1px solid #F49E00;
+ outline:          1px solid var(--farbe_button_rahmen);
+}
+
+#fussbereich {
+    position:absolute;
+    bottom: 0;
+    width: 100%;
+    background-color: yellow;
+    height: 2em;
+}
+
+footer2{
+	margin-top:20px;
+	text-align:center;
+	background-color: white;
+}
+
+footer{
+ text-align: center;
+ padding: 20px;
+ postition: absolute;
+ bottom: 0;
+}
