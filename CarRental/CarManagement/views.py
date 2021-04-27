@@ -7,9 +7,15 @@ from CarManagement.models import Reservation
 
 # Create your views here.
 
+
 def index(request):
     return HttpResponse("First Response")
 
+def update(request): # möglichkeit jeden wert anzupassen
+    car = Car.objects.get(id=1)
+    car.model_name = "bla"
+    car.save()
+    return HttpResponse("Updated")
 
 def new_car(request):
     car = Car(brand="BMW", model_name="A4", license_plate="BI-EE-1997", seats=4, km_age=250000, construction_date=2006, vehicle_type="SUV", gear_type="1")
