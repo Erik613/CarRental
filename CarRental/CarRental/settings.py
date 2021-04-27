@@ -75,17 +75,13 @@ WSGI_APPLICATION = 'CarRental.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'sql_server.pyodbc',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'django_db',
-        'USER': 'django',
+        'USER': 'djangouser',
         'PASSWORD': 'Passwort1234',
         'HOST': 'localhost',
-        'PORT': '1433',
-
-        'OPTIONS': {
-            'driver': 'ODBC Driver 17 for SQL Server',
-        },
-    },
+        'PORT': '',
+    }
 }
 
 # set this to False if you want to turn off pyodbc's connection pooling
