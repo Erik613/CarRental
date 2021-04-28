@@ -14,6 +14,11 @@ class Car(models.Model):
     gear_type = models.CharField(max_length=50)
     reserved = models.BooleanField(default=False)
 
+    def __str__(self):
+        return ('brand: ' + self.brand + ", model_name: " + self.model_name + ", license_plate: " + self.license_plate +
+        ', seats: ' + str(self.seats) + ", km_age: " + str(self.km_age) + ", construction_date: " + str(self.construction_date) +
+        ", vehicle_type: " + self.vehicle_type + ", gear_type: " + self.gear_type)
+
 
 class Reservation(models.Model):
     id_user = models.CharField(max_length=50)
@@ -29,4 +34,7 @@ class Customers(models.Model):
     residence_street = models.CharField(max_length=50)
     residence_number = models.CharField(max_length=50)
     residence_city = models.CharField(max_length=50)
+
+    
+    
 

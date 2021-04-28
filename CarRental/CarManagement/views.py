@@ -1,7 +1,6 @@
 import datetime
-
-from django.shortcuts import render
-from django.http import HttpResponse
+from django.shortcuts import render, redirect
+from django.http import HttpResponse, HttpResponseNotFound, Http404
 from django.contrib.auth.decorators import login_required
 from CarManagement.models import Car
 from CarManagement.models import Reservation
@@ -24,7 +23,7 @@ def new_car(request):
     car = Car(brand="BMW", model_name="A4", license_plate="BI-EE-1997", seats=4, km_age=250000, construction_date=2006,
               vehicle_type="SUV", gear_type="1")
     car.save()
-    return HttpResponse("Ok: ")
+    return redirect('get_car', pk=car.pk)
 
 @login_required(login_url='/accounts/login/')
 def car_get_all(request):
@@ -35,6 +34,13 @@ def car_get_select(request):
     cars = Car.objects.filter(id=1).values()
     return HttpResponse(cars)
 
+def get_car(request, pk):
+    try:
+        car = Car.objects.get(pk=pk)
+        #cars = Car.objects.get(pk=pk).values()
+        return HttpResponse(car)
+    except Car.DoesNotExist:
+        raise Http404("Poll does not exist")
 
 def car_set_reserved(request):
     car = Car.objects.get(id=1)

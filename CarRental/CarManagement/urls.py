@@ -11,4 +11,6 @@ urlpatterns = [
     path('csetKmAge', views.car_set_km_age, name='c_set_km_age'),
     path('newReservation', views.new_reservation, name='new_reservation'),
     path('rgetAll', views.reservation_get_all, name='r_get_all'),
+    path('getCar/<int:pk>', views.get_car, name='get_car'),
+
 ]
