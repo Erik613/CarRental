@@ -40,7 +40,7 @@ Reservierungs-Eintrag
 
 
 
-
+<!--
     <table>
       <thead>
       <tr>
@@ -60,18 +60,19 @@ Reservierungs-Eintrag
         <td>
           <input id="RVG_AM" type="datetime-local" name="RVG_AM" value="2020-01-01T00:00" min="2000-01-01T00:00" max="2100-01-01T00:00">            </td>
       </tr>
-      </tr-->
+      </tr>
       </tbody>
 
     </table>
-
-
+-->
     <br>         <br>
+    <form action='new' method='post'>
+      {% csrf_token %}
+      {{ form.as_p}}
 
 
 
-
-    <table>
+   <!-- <table>
       <thead>
       <tr>
         <td><label for="RVG_ZIELORT">Zielort:</label></td>
@@ -90,10 +91,10 @@ Reservierungs-Eintrag
           <input id="RVG_ZEITRAUM_BIS" type="datetime-local" name="RVG_ZEITRAUM_BIS" value="2020-01-01T00:00" min="2000-01-01T00:00" max="2100-01-01T00:00">            </td>
         </td>
       </tr>
-      </tr-->
+      </tr>
       </tbody>
 
-    </table>
+    </table> 
 
 
 
@@ -119,7 +120,7 @@ Reservierungs-Eintrag
           <input id="RVG_PRIVATFAHRTEN_KM" placeholder="RVG_PRIVATFAHRTEN_KM" type="text" name="q" size="21">            </td>
         </td>
       </tr>
-      </tr-->
+      </tr>
       </tbody>
 
     </table>
@@ -146,30 +147,32 @@ Reservierungs-Eintrag
           <input id="RVG_GEAENDERT_VON" type="datetime-local" name="RVG_GEAENDERT_VON" value="2020-01-01T00:00" min="2000-01-01T00:00" max="2100-01-01T00:00">            </td>
         </td>
       </tr>
-      </tr-->
+      </tr>
       </tbody>
 
-    </table>
+    </table> -->
 
     <br>         <br>
 
 
-        
+     
     <footer>
-      <form action="#">
-        <button id="id_but_speichern" type="submit" accesskey="s" formaction="">
-          <u>S</u>peichern</button>
+      
+        <!--<button id="id_but_speichern" type="submit" accesskey="s" formaction="">
+          <u>S</u>peichern</button>-->
+        <input type='submit' value='Senden'>
         <button id="id_but_drucken" type="submit" accesskey="d" formaction="">
           <u>D</u>rucken</button>
         <button id="id_but_zurueck" type="submit" accesskey="z" formaction="">
           <u>B</u>eenden</button>
         <button id="id_but_pdf" type="submit" accesskey="z">
           <u>P</u>DF</button>
-      </form>
+      
       <hr>
       <br><br>
       <hr>
     </footer>
+    </form>
 </div>
 </body>
 </html>

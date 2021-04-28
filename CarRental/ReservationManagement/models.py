@@ -9,3 +9,6 @@ class Reservation(models.Model):
     id_car = models.ForeignKey(Car, on_delete=models.RESTRICT)
     start_date = models.DateField()
     end_date = models.DateField()
+
+    def __str__(self):
+        return str(self.id_car) + " - " + str(self.id_customer) + " - " + str(self.start_date) + " - " + str(self.end_date)
