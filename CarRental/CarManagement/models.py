@@ -30,6 +30,3 @@ class Car(models.Model):
 
 
 
-
-
-
