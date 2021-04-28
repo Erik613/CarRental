@@ -20,20 +20,9 @@ class Car(models.Model):
         ", vehicle_type: " + self.vehicle_type + ", gear_type: " + self.gear_type)
 
 
-class Reservation(models.Model):
-    id_user = models.CharField(max_length=50)
-    car_id = models.IntegerField()
-    start_date = models.DateField()
-    end_date = models.DateField()
 
 
-class Customers(models.Model):
-    first_name = models.CharField(max_length=50)
-    sec_name = models.CharField(max_length=50)
-    birth_date = models.DateField()
-    residence_street = models.CharField(max_length=50)
-    residence_number = models.CharField(max_length=50)
-    residence_city = models.CharField(max_length=50)
+
 
     
     
