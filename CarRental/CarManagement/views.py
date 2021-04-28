@@ -7,7 +7,6 @@ from CarManagement.forms import CarEntryForm
 
 # Create your views here.
 
-
 def index(request):
     return render(request, 'EntryCar.html')
 

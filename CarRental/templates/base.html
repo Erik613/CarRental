@@ -2,14 +2,43 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="ISO-8859-1">
-  <link rel="stylesheet" type="text/css" media="screen" href="{% static 'Maske.css' %}"/>
-  
+  <meta charset="ISO-8859-1"><
+<!--  <link rel="stylesheet" type="text/css" media="screen" href="{% static 'Maske.css' %}"/>-->
+  <link rel="stylesheet" type="text/css" media="screen" href="{% static 'style.css' %}"/>
   <title> {% block title %}{% endblock title %} </title>
 
 </head>
 
 <body>
+
+<div id="top"></div>
+
+<div class="header">
+  <div class="header_content">
+    <div class="logo_abschnitt">
+      <a href="LINK/" id="logo"><img src="{% static 'graphic\america_car_rental_logo_400.jpg' %}" width="100%"></a>
+    </div>
+
+  </div>
+
+</div>
+
+<div class="wrapper">
+  <div id="tool_navi_abschnitt" style=" background-color: #0188c8">
+    <div class="tool_navigation" style="float: none; width: 1100px; margin: 0 auto;">
+      <ul>
+
+        <li class="tool_nav" style="width: 19.2%"><a  class="tool_navi_button" href="LINK" ><img src="LINK" width="16px"> <div class="navi_schrift">Erstellung</div></a>
+        </li>
+        <li class="tool_nav" style="width: 19.2%"><a   class="tool_navi_button" href="LINK" ><img src="LINK" width="16px"><div class="navi_schrift"> Eingang</div></a></li>
+        <li class="tool_nav" style="width: 19.2%"><a   class="tool_navi_button" href="LINK" ><img src="LINK" width="16px"><div class="navi_schrift"> Ausgang</div></a></li>
+        <li class="tool_nav " style="width: 19.2%"><a class="tool_navi_button" href="LINK" ><img src="LINK" width="16px"><div class="navi_schrift"> Kontakte</div></a></li>
+        <li class="tool_nav " style="width: 19.2%"><a class="tool_navi_button" href="LINK" ><img src="LINK" width="16px"><div class="navi_schrift"> Einstellung</div></a></li>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
 {% block content %}{% endblock content %}
 </body>
 </html>
