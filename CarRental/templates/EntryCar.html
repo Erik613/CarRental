@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+
+
+{% block title %}Dienstfahrzeug Eintrag{% endblock title %}
+
+{% block content %}
+
+Dienstfahrzeug-Eintrag
+<hr>
+<!-- Großer Zurück Button Links -->
+<!-- form um Button Funktion zugeben (spring zur MaskenVerwaltung zurück) -->
+  <!-- a href="/template/AnforderungDienstfahrzeuge.html">Unterseite</a-->
+  <button style="margin-top: 18px; margin-left:1px; height:970px; width:200px; type:reset; value:DEL; th:action:@{/dfzVerwaltung/MaskenVerwaltung};">
+    <u>Z</u>urück</button>
+<!-- Dokument damit ein Partner ein Dienstfahrzeug anfordern kann -->
+<div class="middleScreenAnfDienstfahr">
+  <fieldset class="fielset_row">
+    <h2>
+      <br>*Legende:<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; RVG&nbsp;&nbsp;- Reservierung<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; FSN&nbsp;&nbsp;&nbsp;&nbsp;- Fuerherschein      <br><br>
+
+    </h2>
+    <br>
+    <hr>
+    <br><br>
+    <hr>
+    <br><br>
+    <h1>
+      <u>Eintrag Dienstfahrzeug</u>
+    </h1>
+
+
+
+    <br>
+    <br>
+    <br><br>
+    <form action='test' method='post'>
+      {% csrf_token %}
+      {{ form.as_p}}
+      
+    
+    <br>         <br>
+
+    <footer>
+      <div>
+          <input type='submit' value='Senden'>
+          <button id="id_but_drucken" type="submit" accesskey="d" formaction="">
+            <u>D</u>rucken</button>
+          <button id="id_but_zurueck" type="submit" accesskey="z" formaction="">
+            <u>B</u>eenden</button>
+          <button id="id_but_pdf" type="submit" accesskey="z">
+            <u>P</u>DF</button>
+      </div>
+      <br>
+      <hr>
+      <br><br>
+      <hr>
+    </footer>
+    </form>
+</div>
+{% endblock content %}

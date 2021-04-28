@@ -20,3 +20,6 @@ def update(request): # möglichkeit jeden wert anzupassen
     reservation = Reservation.objects.get(id=1)
     reservation.save()
     return HttpResponse("Updated")
+
+def test(request):
+    return render(request, 'EntryReservation.html')

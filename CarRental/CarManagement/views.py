@@ -3,6 +3,7 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse, HttpResponseNotFound, Http404
 from django.contrib.auth.decorators import login_required
 from CarManagement.models import Car
+from CarManagement.forms import CarEntryForm
 
 # Create your views here.
 
@@ -18,10 +19,16 @@ def update(request): # möglichkeit jeden wert anzupassen
 
 @login_required(login_url='/accounts/login/')
 def new_car(request):
-    car = Car(brand="BMW", model_name="A4", license_plate="BI-EE-1997", seats=4, km_age=250000, construction_date=2006,
-              vehicle_type="SUV", gear_type="1")
-    car.save()
-    return redirect('get_car', pk=car.pk)
+    if request.method == 'GET':
+        form = CarEntryForm()
+        return render(request, 'EntryCar.html', {'form': form})
+    else:
+        form = CarEntryForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('get_car', pk=form.instance.pk)
+        else:
+            return HttpResponse('<h1>Fehler</h1>' , status=500)
 
 @login_required(login_url='/accounts/login/')
 def car_get_all(request):
@@ -50,3 +57,4 @@ def car_set_km_age(request):
     car.km_age = 1000
     car.save()
     return HttpResponse("Cars km_age changed")
+
