@@ -1,0 +1,102 @@
+{% extends 'base.html' %}
+
+
+{% block title %}Dienstfahrzeug Eintrag{% endblock title %}
+
+{% block content %}
+
+Dienstfahrzeug-Eintrag
+<hr>
+<!-- Großer Zurück Button Links -->
+<!-- form um Button Funktion zugeben (spring zur MaskenVerwaltung zurück) -->
+  <!-- a href="/template/AnforderungDienstfahrzeuge.html">Unterseite</a-->
+  <button style="margin-top: 18px; margin-left:1px; height:970px; width:200px; type:reset; value:DEL; th:action:@{/dfzVerwaltung/MaskenVerwaltung};">
+    <u>Z</u>urück</button>
+<!-- Dokument damit ein Partner ein Dienstfahrzeug anfordern kann -->
+<div class="middleScreenAnfDienstfahr">
+  <fieldset class="fielset_row">
+    <h2>
+      <br>*Legende:<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; RVG&nbsp;&nbsp;- Reservierung<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; FSN&nbsp;&nbsp;&nbsp;&nbsp;- Fuerherschein      <br><br>
+
+    </h2>
+    <br>
+    <hr>
+    <br><br>
+    <hr>
+    <br><br>
+    <h1>
+      <u>Eintrag Dienstfahrzeug</u>
+    </h1>
+
+
+
+    <br>
+    <br>
+    <table>
+      <thead>
+      <tr>
+        <td><label for="DFZ_NUMMERNSCHILD">Nummernschild:</label></td>
+        <td><label for="DFZ_MODELLNAME">Modellname:</label></td>
+        <td><label for="DFZ_BAUTYP">Bautyp:</label></td>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td>
+          <input id ="DFZ_NUMMERNSCHILD" placeholder="DFZ_NUMMERNSCHILD" type="text" name="q" size="21">
+        </td>
+        <td>
+          <input id="DFZ_MODELLNAME" placeholder="DFZ_MODELLNAME" type="text" name="q" size="21">
+        </td>
+        <td>
+          <input id="DFZ_BAUTYP" placeholder="DFZ_BAUTYP" type="text" name="q" size="21">
+      </tr>
+      </tr-->
+      </tbody>
+
+    </table>
+    <br><br>
+
+    <table>
+      <thead>
+      <tr>
+        <td><label for="DFZ_SITZPLAETZE">Sitzplaetze:</label></td>
+        <td><label for="DFZ_AENDERUNGSZEITPUNKT">Aenderungszeitpunkt:</label></td>
+        <td><label for="DFZ_GEAENDERT_VON">Geaendert von:</label></td>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td>
+          <input id="DFZ_SITZPLAETZE" placeholder="DFZ_SITZPLAETZE" type="text" name="q" size="21">
+        </td>
+        <td>
+          <input id="DFZ_AENDERUNGSZEITPUNKT" type="datetime-local" name="RVG_ZEITRAUM_VON am" value="2020-01-01T00:00" min="2000-01-01T00:00" max="2100-01-01T00:00">            </td>
+        <td>
+          <input id="DFZ_GEAENDERT_VON" placeholder="DFZ_GEAENDERT_VON" type="text" name="q" size="21">
+        </td>
+      </tr>
+      </tr-->
+      </tbody>
+
+    </table>
+    <br>         <br>
+
+    <footer>
+      <div>
+          <button id="id_but_speichern" type="submit" accesskey="s" formaction="">
+            <u>S</u>peichern</button>
+          <button id="id_but_drucken" type="submit" accesskey="d" formaction="">
+            <u>D</u>rucken</button>
+          <button id="id_but_zurueck" type="submit" accesskey="z" formaction="">
+            <u>B</u>eenden</button>
+          <button id="id_but_pdf" type="submit" accesskey="z">
+            <u>P</u>DF</button>
+      </div>
+      <br>
+      <hr>
+      <br><br>
+      <hr>
+    </footer>
+</div>
+{% endblock content %}
