@@ -44,7 +44,7 @@ def car_set_km_age(request):
     car.save()
     return HttpResponse("Cars km_age changed")
 
-def new_reservation(requests):
+def new_reservation(request):
     reservation = Reservation(id_user="test", car_id="1", start_date=datetime.datetime.now(),
                               end_date=datetime.datetime.now())
     reservation.save()
@@ -57,3 +57,5 @@ def reservation_get_all(request):
 def new_customer(request):
     customer = Customers(first_name="Patrick", sec_name="Matern", birth_date=(datetime.date(1997, 4, 9)),
                          residence_street="Test Str", residence_number="69", residence_city="Bielefeld")
+    customer.save()
+    return HttpResponse("new customer")
