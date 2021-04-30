@@ -1,90 +1,56 @@
 {% extends 'base.html' %}
-
-{% block title %}
-<html>
-
-<head>
-    <meta charset="ISO-8859-1">
-    <link rel="stylesheet" type="text/css" media="screen" href="static/Maske.css"/>
-</head>
-<title>Masken Verwaltung</title>
-
-{% endblock title %}
-
+{% load static %}
+{% block title %}Home{% endblock title %}
 
 {% block content %}
-<body>Dienstfahrzeug-Verwaltung
-<hr>
-<!-- Buttonleiste der linken Seite -->
-<div class="form_footerLeft">
-    <div class="form_footerLeft">
-        <button id="id_but_linksen" type="submit" accesskey="a" formaction="">
-            <u>D</u>okument ausw&aumlhlen</button>
-        <button id="id_but_linksen" type="submit" accesskey="a" formaction="">
-            <u>D</u>okument hinzuf&uumlgen</button>
-        <button id="id_but_linksen" type="submit" accesskey="z" formaction="">
-            <u>D</u>okument/e entfernen</button>
-    </div>
-</div>
-<!-- Dokumente der Fachabteilung -->
-<div class="middleScreenAnfDienstfahr">
-    <fieldset>
-        <table>
-            <tr>
-                <td>
-                    <!-- href holt sich aus dem Controller String anforderungDienstfahrzeuge sein Link -->
-                    <!-- target option legt fest das kein neues Fenster öffnet will in the window itself -->
-                    <a href="EntryCar" target="_top">>> Entry Car
-                        <!--Menu|de|TRUE-->
-                    </a>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <a href="EintragDienstfahrzeug" target="_top">>> Eintrag Partner
-                        <!--Menu|de|TRUE-->
-                    </a>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <a href="EintragPartner" target="_top">>> Eintrag Reservierung
-                        <!--Menu|de|TRUE-->
-                    </a>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <a href="" target="_top">>> Alle Reservierungen
-                        <!--Menu|de|TRUE-->
-                    </a>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <a href="" target="_top">>> Alle Partner
-                        <!--Menu|de|TRUE-->
-                    </a>
-                </td>
-            </tr>
-
-        </table>
-    </fieldset>
-    <!-- Button unterhalb der aufgelisteten Dokumente -> soll zu dem ausgewählten Dokument führen  -->
-    <!-- form um Button Funktion zu benutzen -->
-    <form id="id_frm_weiter" name="AnforderungDienstfahrzeuge">
-        <!-- a href="/template/AnforderungDienstfahrzeuge.html">Unterseite</a-->
-        <button id="id_but_senden" type="submit" name="action" value="AnforderungDienstfahrzeuge">Weiter</button>
-    </form>
-    <!-- ButtonLeiste im Fußbereich -->
-    <button id="id_but_speichern" type="submit" accesskey="s" formaction="">
-        <u>S</u>peichern</button>
-    <button id="id_but_drucken" type="submit" accesskey="d" formaction="">
-        <u>D</u>rucken</button>
-    <button id="id_but_zurueck" type="submit" accesskey="z" formaction="">
-        <u>B</u>eenden</button>
-</div>
-</body>
-
-</html>
-{% endblock content %}
+            <!-- Jumbotron Header-->
+            <header class="jumbotron my-4">
+                <h1 class="display-3">Dienstfahrzeugverwaltung</h1>
+                <p class="lead"></p>
+                <a class="btn btn-primary btn-lg" href="#!">Jetzt Reservieren!</a>
+            </header>
+            <!-- Page Features-->
+            <div class="row text-center">
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="card h-100">
+                        <img class="card-img-top" src="{% static 'home/car1.jpg' %}" alt="..." />
+                        <div class="card-body">
+                            <h4 class="card-title">Auto hinzufügen</h4>
+                            <p class="card-text">Ein Auto der Datenbank hinzufügen, um es später für zur Reservierung bereitzustellen.</p>
+                        </div>
+                        <div class="card-footer"><a class="btn btn-primary" href="{% url 'new_car' %}">Los!</a></div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="card h-100">
+                        <img  class="card-img-top" src="{% static 'home/mitarbeiter1.jpg' %}" alt="..." />
+                        <div class="card-body">
+                            <h4 class="card-title">Mitarbeiter hinzufügen</h4>
+                            <p class="card-text">Mitarbeiter hinzufügen</p>
+                        </div>
+                        <div class="card-footer"><a class="btn btn-primary" href="#!">Los!</a></div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="card h-100">
+                        <img class="card-img-top" src="{% static 'home/reserved.jpg' %}" alt="..." />
+                        <div class="card-body">
+                            <h4 class="card-title">Reservierung vornehmen</h4>
+                            <p class="card-text">Für einen Mitarbeiter ein Auto Reservieren</p>
+                        </div>
+                        <div class="card-footer"><a class="btn btn-primary" href="#!">Los!</a></div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="card h-100">
+                        <img class="card-img-top" src="https://via.placeholder.com/500x325" alt="..." />
+                        <div class="card-body">
+                            <h4 class="card-title">Aktuelle Reservierungen anzeigen</h4>
+                            <p class="card-text">Liste alle aktuellen Reservierungen auf.</p>
+                        </div>
+                        <div class="card-footer"><a class="btn btn-primary" href="#!">Los!</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endblock content %}
