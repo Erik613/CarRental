@@ -10009,6 +10009,9 @@ h3 {
   }
 
   .login_form {
-
+    left: 50%;
+    width: 500px;
+    margin-left: -150px;
+    position: relative;
   }
 }
