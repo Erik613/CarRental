@@ -34,8 +34,8 @@ class CarFormView(generic.FormView):
 class CarListView(generic.ListView):
     model = Car
     context_object_name = "car_list"
-    queryset = Car.objects.all()
     template_name = "listView.html"
+    paginate_by = 25
 
 class CarDetailView(generic.DetailView):
     model = Car

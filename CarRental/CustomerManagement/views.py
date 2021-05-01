@@ -2,13 +2,13 @@ import datetime
 from django.shortcuts import render, redirect, reverse
 from django.http import HttpResponse, HttpResponseNotFound, Http404
 from django.contrib.auth.decorators import login_required
-from django.views.generic import FormView
+from django.views import generic
 from CustomerManagement.models import Customer
 from .forms import CustomerForm
 
 # Create your views here.
 
-class CustomerFormView(FormView):
+class CustomerFormView(generic.FormView):
     form_class = CustomerForm
     template_name = 'form.html'
     pk = None
@@ -28,6 +28,15 @@ class CustomerFormView(FormView):
     def get_context_data(self, **kwargs):
         context = super(CustomerFormView, self).get_context_data(**kwargs)
         context['pagetitle'] = 'Kunden hinzufügen'
+        return context
+
+class CustomerListView(generic.ListView):
+
+    model = Customer
+    paginate_by = 100  # if pagination is desired
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
         return context
 
 def get(request, pk):
