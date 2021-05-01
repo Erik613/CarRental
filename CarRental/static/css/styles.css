@@ -10008,10 +10008,11 @@ h3 {
     border-color: #dee2e6;
   }
 
-  .login_form {
-    left: 50%;
-    width: 500px;
-    margin-left: -150px;
-    position: relative;
-  }
+}
+.login_form {
+  left: 50%;
+  width: 500px;
+  margin-left: -150px;
+  position: relative;
+  background-color: #000;
 }
