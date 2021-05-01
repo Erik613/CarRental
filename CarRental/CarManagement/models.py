@@ -21,12 +21,8 @@ class Car(models.Model):
     reserved = models.BooleanField(default=False)
 
     def __str__(self):
-        return (str(self.pk) + " - " + self.brand + " - " + self.model_name + " - " + self.license_plate)
-        '''
-        return ('brand: ' + self.brand + ", model_name: " + self.model_name + ", license_plate: " + self.license_plate +
-        ', seats: ' + str(self.seats) + ", km_age: " + str(self.km_age) + ", construction_date: " + str(self.construction_date) +
-        ", vehicle_type: " + self.vehicle_type + ", is_automatic: " + str(self.is_automatic))
-        '''
+        return f"{self.pk} - {self.brand} - {self.model_name} - ({self.license_plate})"
+        
 
 
 

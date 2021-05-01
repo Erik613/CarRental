@@ -1,59 +1,39 @@
 {% extends 'base.html' %}
+{% load materializecss %}
 
-
-{% block title %}Dienstfahrzeug Eintrag{% endblock title %}
+{% block title %}{{ pagetitle }}{% endblock title %}
+{% block css %}
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.1/css/materialize.min.css" integrity="sha256-qj3p6P1fJIV+Ndv7RW1ovZI2UhOuboj9GcODzcNFIN8=" crossorigin="anonymous" />
+{% endblock css %}
 
 {% block content %}
-
-Dienstfahrzeug-Eintrag
-<hr>
-<!-- Großer Zurück Button Links -->
-<!-- form um Button Funktion zugeben (spring zur MaskenVerwaltung zurück) -->
-  <!-- a href="/template/AnforderungDienstfahrzeuge.html">Unterseite</a-->
-  <button style="margin-top: 18px; margin-left:1px; height:970px; width:200px; type:reset; value:DEL; th:action:@{/dfzVerwaltung/MaskenVerwaltung};">
-    <u>Z</u>urück</button>
-<!-- Dokument damit ein Partner ein Dienstfahrzeug anfordern kann -->
-<div class="middleScreenAnfDienstfahr">
-  <fieldset class="fielset_row">
-    <h2>
-      <br>*Legende:<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; RVG&nbsp;&nbsp;- Reservierung<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; FSN&nbsp;&nbsp;&nbsp;&nbsp;- Fuerherschein      <br><br>
-
-    </h2>
+  <h1> {{ pagetitle }} </h1>
+  <form action="" method='POST'>
+    {% csrf_token %}
+    {{ form|materializecss }}
     <br>
-    <hr>
-    <br><br>
-    <hr>
-    <br><br>
-    <h1>
-      <u>Eintrag Dienstfahrzeug</u>
-    </h1>
-
-
-
-    <br>
-    <br>
-    <br><br>
-    <form action='new' method='post'>
-      {% csrf_token %}
-      {{ form.as_p}}
-      
-    <br>         <br>
-
-    <footer>
-      <div>
-          <input type='submit' value='Senden'>
-          <button id="id_but_drucken" type="submit" accesskey="d" formaction="">
-            <u>D</u>rucken</button>
-          <button id="id_but_zurueck" type="submit" accesskey="z" formaction="">
-            <u>B</u>eenden</button>
-          <button id="id_but_pdf" type="submit" accesskey="z">
-            <u>P</u>DF</button>
-      </div>
-      <br>
-      <hr>
-      <br><br>
-      <hr>
-    </footer>
-    </form>
-</div>
+    <button type='submit' class='waves-effect waves light btn-large'>Senden</button>
+  </form>
 {% endblock content %}
+
+{% block javascript %}
+
+  <script
+    src="https://code.jquery.com/jquery-3.3.1.min.js"
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.1/js/materialize.min.js" integrity="sha256-SrBfGi+Zp2LhAvy9M1bWOCXztRU9Ztztxmu5BcYPcPE=" crossorigin="anonymous"></script>
+
+  <script>
+  $(document).ready(function(){
+
+    // Initialize materialize data picker
+    $('.datepicker').datepicker({'format': 'yyyy-mm-dd'});
+    $('select').formSelect();
+
+  });
+  </script>
+
+{% endblock javascript %}
