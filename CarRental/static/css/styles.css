@@ -4455,6 +4455,7 @@ input[type=button].btn-block {
 .card-img-top {
   border-top-left-radius: calc(0.25rem - 1px);
   border-top-right-radius: calc(0.25rem - 1px);
+  height: 150px;
 }
 
 .card-img,
@@ -10005,5 +10006,9 @@ h3 {
   .table .thead-dark th {
     color: inherit;
     border-color: #dee2e6;
+  }
+
+  .login_form {
+
   }
 }
