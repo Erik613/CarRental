@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, reverse
 from django.http import HttpResponse, HttpResponseNotFound, Http404
 from django.contrib.auth.decorators import login_required
 from django.views.generic import FormView
@@ -21,7 +21,8 @@ class ReservationFormView(FormView):
         return super().form_valid(form)
     
     def form_invalid(self, form):
-        form.add_error('Ups, da ist etwas schiefgelaufen')
+        form.add_error(None, 'Ups, da ist etwas schiefgelaufen')
+        return super().form_invalid(form)
 
     def get_context_data(self, **kwargs):
         context = super(ReservationFormView, self).get_context_data(**kwargs)
