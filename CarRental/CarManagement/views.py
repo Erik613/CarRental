@@ -23,7 +23,8 @@ class CarFormView(generic.FormView):
         return super().form_valid(form)
     
     def form_invalid(self, form):
-        form.add_error('Ups, da ist etwas schiefgelaufen')
+        form.add_error(None, 'Ups, da ist etwas schiefgelaufen')
+        return super().form_invalid(form)
     
     def get_context_data(self, **kwargs):
         context = super(CarFormView, self).get_context_data(**kwargs)
