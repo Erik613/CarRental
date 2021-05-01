@@ -59,7 +59,6 @@ article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
 }
 
 footer {
-  position: absolute;
   bottom: 0;
   width: 100%;
   height: 160px;
@@ -5409,7 +5408,6 @@ a.close.disabled {
   z-index: 1050;
   display: none;
   width: 100%;
-  height: 100%;
   overflow: hidden;
   outline: 0;
 }
