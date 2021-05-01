@@ -1,9 +1,34 @@
 {% extends 'base.html' %}
 
+
 {% block content %}
-  <h1>Book List</h1>
+  <h1 class="display-3">Übersicht Einträge</h1>
   {% if car_list %}
   <div class="list-group">
+    <table class="sortable table table-striped table-hover ">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">Kennzeichen</th>
+          <th scope="col">Marke</th>
+          <th scope="col">Modell</th>
+          <th scope="col">Baujahr</th>
+          <th scope="col">Sitzplätze</th>
+        </tr>
+      </thead>
+      <tbody>
+      {% for car in car_list %}
+      <tr>
+        <td scope="row">{{ car.pk }}</td>
+        <td><a href="{{ car.get_absolute_url }}"> {{ car.license_plate }}</a></td>
+        <td>{{car.brand}}</td>
+        <td>{{car.model_name}}</td>
+        <td>{{car.construction_date}}</td>
+        <td>{{car.seats}}</td>
+      </tr>
+      {% endfor %}
+      </tbody>
+    </table>
   <ul>
     {% for car in car_list %}
       <li>
