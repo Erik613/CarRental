@@ -36,6 +36,9 @@ class CarListView(generic.ListView):
     queryset = Car.objects.all()
     template_name = "listView.html"
 
+class CarDetailView(generic.DetailView):
+    model = Car
+
 def index(request):
     return HttpResponse("First Response")
 
