@@ -11,4 +11,4 @@ class Reservation(models.Model):
     end_date = models.DateField()
 
     def __str__(self):
-        return f"{self.id_car} - {self.id_customer} - {self.start_date} - {self.end_date}"
+        return f"{self.id_customer} - {self.start_date} - {self.end_date}"

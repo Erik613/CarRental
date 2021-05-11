@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    'CarRental',
     'CarManagement',
     'CustomerManagement',
     'ReservationManagement',
@@ -125,6 +126,9 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
+
+DATE_INPUT_FORMATS = ["%Y-%m-%d"]
+
 
 
 # Static files (CSS, JavaScript, Images)

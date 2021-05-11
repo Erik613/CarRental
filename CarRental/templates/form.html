@@ -14,7 +14,7 @@
     {% csrf_token %}
     {{ form|materializecss }}
     <br>
-    <button type='submit' class='waves-effect waves light btn-large'>Senden</button>
+    <button type='submit' class='waves-effect waves light btn-large' style="margin-bottom: 25px;">Senden</button>
 </form>
 {% endblock content %}
 
@@ -35,6 +35,7 @@
     $('.datepicker').datepicker(
       {'format': 'yyyy-mm-dd',
       'yearRange': 100,
+      'autoClose': true
       });
     $('select').formSelect();
 

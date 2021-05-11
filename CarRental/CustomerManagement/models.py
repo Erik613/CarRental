@@ -7,8 +7,8 @@ class Customer(models.Model):
     last_name = models.CharField(max_length=50)
     birth_date = models.DateField()
     residence_street = models.CharField(max_length=50)
-    residence_number = models.CharField(max_length=50)
+    post_code = models.IntegerField()
     residence_city = models.CharField(max_length=50)
 
     def __str__(self):
-        return f"{self.id} - {self.first_name} - {self.last_name} - {self.birth_date}"
+        return f"{self.first_name} - {self.last_name} - {self.birth_date}"

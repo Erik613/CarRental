@@ -15,7 +15,7 @@ class CarFormView(generic.FormView):
     pk = None
 
     def get_success_url(self):
-        return reverse('get_car', kwargs={'pk': self.pk})
+        return reverse('home')
 
     def form_valid(self, form):
         form = form.save()
@@ -28,13 +28,22 @@ class CarFormView(generic.FormView):
     
     def get_context_data(self, **kwargs):
         context = super(CarFormView, self).get_context_data(**kwargs)
-        context['pagetitle'] = 'Auto hinzufügen'
+        if "pk" in self.kwargs:
+            context['pagetitle'] = 'Auto bearbeiten'
+        else:
+            context['pagetitle'] = 'Auto hinzufügen'
         return context
+    
+    def get_form_kwargs(self):
+        form_kwargs = super(CarFormView, self).get_form_kwargs()
+        if 'pk' in self.kwargs:
+            form_kwargs['instance'] = Car.objects.get(pk=int(self.kwargs['pk']))
+        return form_kwargs
 
 class CarListView(generic.ListView):
     model = Car
     context_object_name = "car_list"
-    template_name = "listView.html"
+    template_name = "carListView.html"
     paginate_by = 25
 
 class CarDetailView(generic.DetailView):

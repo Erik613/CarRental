@@ -3,7 +3,7 @@ from django.shortcuts import render, redirect, reverse
 from django.http import HttpResponse, HttpResponseNotFound, Http404
 from django.contrib.auth.decorators import login_required
 from django.views import generic
-from CustomerManagement.models import Customer
+from .models import Customer
 from .forms import CustomerForm
 
 # Create your views here.
@@ -14,7 +14,7 @@ class CustomerFormView(generic.FormView):
     pk = None
 
     def get_success_url(self):
-        return reverse('get_car', kwargs={'pk': self.pk})
+        return reverse('home')
 
     def form_valid(self, form):
         form = form.save()
@@ -27,17 +27,25 @@ class CustomerFormView(generic.FormView):
     
     def get_context_data(self, **kwargs):
         context = super(CustomerFormView, self).get_context_data(**kwargs)
-        context['pagetitle'] = 'Kunden hinzufügen'
+        if "pk" in self.kwargs:
+            context['pagetitle'] = 'Kunden bearbeiten'
+        else:
+            context['pagetitle'] = 'Kunden hinzufügen'
         return context
+
+    def get_form_kwargs(self):
+        form_kwargs = super(CustomerFormView, self).get_form_kwargs()
+        if 'pk' in self.kwargs:
+            form_kwargs['instance'] = Customer.objects.get(pk=int(self.kwargs['pk']))
+        return form_kwargs
+
+
+
 
 class CustomerListView(generic.ListView):
-
     model = Customer
-    paginate_by = 100  # if pagination is desired
-
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        return context
+    context_object_name = "customer_list"
+    template_name = "customerListView.html"
 
 def get(request, pk):
     try:

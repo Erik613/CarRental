@@ -1,19 +1,21 @@
 from django.shortcuts import render, redirect, reverse
 from django.http import HttpResponse, HttpResponseNotFound, Http404
 from django.contrib.auth.decorators import login_required
-from django.views.generic import FormView
+from django.views import generic
 from ReservationManagement.models import Reservation
-from ReservationManagement.forms import ReservationForm
+from CarManagement.models import Car
+from CustomerManagement.models import Customer
+from ReservationManagement.forms import ReservationForm, ReservationUpdateForm
 
 # Create your views here.
 
-class ReservationFormView(FormView):
+class ReservationFormView(generic.FormView):
     form_class = ReservationForm
     template_name = 'form.html'
     pk = None
 
     def get_success_url(self):
-        return reverse('get_reservation', kwargs={'pk': self.pk})
+        return reverse('home')
 
     def form_valid(self, form):
         form = form.save()
@@ -26,8 +28,28 @@ class ReservationFormView(FormView):
 
     def get_context_data(self, **kwargs):
         context = super(ReservationFormView, self).get_context_data(**kwargs)
-        context['pagetitle'] = 'Reservierung hinzufügen'
+        if "pk" in self.kwargs:
+            context['pagetitle'] = 'Reservierung bearbeiten'
+        else:
+            context['pagetitle'] = 'Reservierung hinzufügen'
         return context
+
+
+class ReservationUpdateView(generic.edit.UpdateView):
+    template_name = "form.html"
+    model = Reservation
+    form_class = ReservationUpdateForm
+
+    def get_context_data(self, **kwargs):
+        context = super(ReservationUpdateView, self).get_context_data(**kwargs)
+        context['pagetitle'] = 'Reservierung bearbeiten'
+        return context
+
+class ReservationListView(generic.ListView):
+    model = Reservation
+    context_object_name = "reservation_list"
+    template_name = "reservationListView.html"
+    paginate_by = 25
 
 def new_reservation(request):
     if request.method == 'GET':
@@ -45,7 +67,7 @@ def get(request, pk):
     try:
         reservation = Reservation.objects.get(pk=pk)
         return HttpResponse(reservation)
-    except Car.DoesNotExist:
+    except Reservation.DoesNotExist:
         return HttpResponseNotFound('<h1>Not Found</h1>')
 
 
