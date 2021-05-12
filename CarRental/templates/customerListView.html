@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
+{% endblock css %}
+
+
+{% block content %}
+  <h1 class="display-3">Übersicht Einträge</h1>
+  {% if customer_list %}
+  <div class="list-group">
+    <table class="sortable table table-striped table-hover ">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">Vorname</th>
+          <th scope="col">Nachname</th>
+          <th scope="col">Geburtsdatum</th>
+          <th scope="col">Plz</th>
+          <th scope="col">Stadt</th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+      {% for customer in customer_list %}
+      <tr>
+        <td scope="row">{{ customer.pk }}</td>
+        <td>{{ customer.first_name }}</td>
+        <td>{{customer.last_name}}</td>
+        <td>{{customer.birth_date}}</td>
+        <td>{{customer.post_code}}</td>
+        <td>{{customer.residence_city}}</td>
+        <td><a href="{% url 'get_customer' pk=customer.pk %}"><i class="fas fa-pen-square"></i></a></td>
+      </tr>
+      {% endfor %}
+      </tbody>
+    </table>
+    
+  </div>
+  {% else %}
+    <p>Keine Kunden vorhanden.</p>
+  {% endif %} 
+{% endblock %}
+
+{% block javascript %}
+<script src="{% static 'js/sort_table.js' %}"></script>
+
+<script type="text/javascript">
+  window.onload = function() {
+  SortTable.init();
+  }
+</script>
+
+{% endblock javascript %}

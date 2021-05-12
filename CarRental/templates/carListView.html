@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
+{% endblock css %}
+
+
+{% block content %}
+  <h1 class="display-3">Übersicht Einträge</h1>
+  {% if car_list %}
+  <div class="list-group">
+    <table class="sortable table table-striped table-hover ">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">Kennzeichen</th>
+          <th scope="col">Marke</th>
+          <th scope="col">Modell</th>
+          <th scope="col">Baujahr</th>
+          <th scope="col">Sitzplätze</th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+      {% for car in car_list %}
+      <tr>
+        <td scope="row">{{ car.pk }}</td>
+        <td>{{ car.license_plate }}</td>
+        <td>{{car.brand}}</td>
+        <td>{{car.model_name}}</td>
+        <td>{{car.construction_date}}</td>
+        <td>{{car.seats}}</td>
+        <td><a href="{% url 'get_car' pk=car.pk %}"><i class="fas fa-pen-square"></i></a></td>
+      </tr>
+      {% endfor %}
+      </tbody>
+    </table>
+    
+  </div>
+  {% else %}
+    <p>Keine Autos vorhanden.</p>
+  {% endif %} 
+{% endblock %}
+
+{% block javascript %}
+<script src="{% static 'js/sort_table.js' %}"></script>
+
+<script type="text/javascript">
+  window.onload = function() {
+  SortTable.init();
+  }
+</script>
+
+{% endblock javascript %}

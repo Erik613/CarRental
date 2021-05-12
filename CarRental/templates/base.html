@@ -22,15 +22,41 @@
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ml-auto">
-                        <li class="nav-item active">
+                        <li class="nav-item {% if nav == "home" %}active{% endif %}">
                             <a class="nav-link" href="{% url 'home' %}">
                                 Home
                                 <span class="sr-only">(current)</span>
                             </a>
                         </li>
-                        <li class="nav-item"><a class="nav-link" href="#!">About</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#!">Services</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#!">Contact</a></li>
+                        <li class="nav-item dropdown {% if nav == "car" %}active{% endif %}">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Autos
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <a class="dropdown-item" href="{% url 'add_car' %}">Hinzufügen</a>
+                                <a class="dropdown-item" href="{% url 'c_get_all' %}">Alle anzeigen</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown {% if nav == "customer" %}active{% endif %}">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Kunden
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <a class="dropdown-item" href="{% url 'add_customer' %}">Hinzufügen</a>
+                                <a class="dropdown-item" href="{% url 'get_all_customer' %}">Alle anzeigen</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown {% if nav == "reservation" %}active{% endif %}">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Reservierungen
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <a class="dropdown-item" href="{% url 'add_reservation' %}">Hinzufügen</a>
+                                <a class="dropdown-item" href="{% url 'get_all_reservation' %}">Alle anzeigen</a>
+                            </div>
+                        </li>
+                        <li class="nav-item"><a class="nav-link" href="{% if user.is_authenticated %} {% url 'logout' %} {% else %} {% url 'login' %} {% endif %}">
+                        {% if user.is_authenticated %}Log out {% else %}Login {% endif %}</a></li>
                     </ul>
                 </div>
             </div>

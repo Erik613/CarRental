@@ -31,6 +31,7 @@ class CustomerFormView(generic.FormView):
             context['pagetitle'] = 'Kunden bearbeiten'
         else:
             context['pagetitle'] = 'Kunden hinzufügen'
+        add_nav_context(context)
         return context
 
     def get_form_kwargs(self):
@@ -46,6 +47,14 @@ class CustomerListView(generic.ListView):
     model = Customer
     context_object_name = "customer_list"
     template_name = "customerListView.html"
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        add_nav_context(context)
+        return context
+
+def add_nav_context(context):
+    context["nav"] = "customer"
 
 def get(request, pk):
     try:

@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
+{% endblock css %}
+
+
+{% block content %}
+  <h1 class="display-3">Übersicht Einträge</h1>
+  {% if reservation_list %}
+  <div class="list-group">
+    <table class="sortable table table-striped table-hover ">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">Id</th>
+          <th scope="col">Kunde</th>
+          <th scope="col">Auto</th>
+          <th scope="col">Startdatum</th>
+          <th scope="col">Enddatum</th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+      {% for reservation in reservation_list %}
+      <tr>
+        <td scope="row">{{ reservation.pk }}</td>
+        <td>{{ reservation.id_customer }}</td>
+        <td>{{reservation.id_car}}</td>
+        <td>{{reservation.start_date}}</td>
+        <td>{{reservation.end_date}}</td>
+        <td><a href="{% url 'get_reservation' pk=reservation.pk %}"><i class="fas fa-pen-square"></i></a></td>
+      </tr>
+      {% endfor %}
+      </tbody>
+    </table>
+    
+  </div>
+  {% else %}
+    <p>Keine Kunden vorhanden.</p>
+  {% endif %} 
+{% endblock %}
+
+{% block javascript %}
+<script src="{% static 'js/sort_table.js' %}"></script>
+
+<script type="text/javascript">
+  window.onload = function() {
+  SortTable.init();
+  }
+</script>
+
+{% endblock javascript %}

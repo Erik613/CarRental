@@ -32,6 +32,7 @@ class CarFormView(generic.FormView):
             context['pagetitle'] = 'Auto bearbeiten'
         else:
             context['pagetitle'] = 'Auto hinzufügen'
+        add_nav_context(context)
         return context
     
     def get_form_kwargs(self):
@@ -46,6 +47,12 @@ class CarListView(generic.ListView):
     template_name = "carListView.html"
     paginate_by = 25
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        add_nav_context(context)
+        return context
+    
+
 class CarDetailView(generic.DetailView):
     model = Car
 
@@ -57,6 +64,9 @@ def update(request): # möglichkeit jeden wert anzupassen
     car.model_name = "bla"
     car.save()
     return HttpResponse("Updated")
+
+def add_nav_context(context):
+    context["nav"] = "car"
 
 '''
 @login_required(login_url='/accounts/login/')

@@ -32,6 +32,7 @@ class ReservationFormView(generic.FormView):
             context['pagetitle'] = 'Reservierung bearbeiten'
         else:
             context['pagetitle'] = 'Reservierung hinzufügen'
+        add_nav_context(context)
         return context
 
 
@@ -43,6 +44,7 @@ class ReservationUpdateView(generic.edit.UpdateView):
     def get_context_data(self, **kwargs):
         context = super(ReservationUpdateView, self).get_context_data(**kwargs)
         context['pagetitle'] = 'Reservierung bearbeiten'
+        add_nav_context(context)
         return context
 
 class ReservationListView(generic.ListView):
@@ -51,36 +53,11 @@ class ReservationListView(generic.ListView):
     template_name = "reservationListView.html"
     paginate_by = 25
 
-def new_reservation(request):
-    if request.method == 'GET':
-        form = ReservationForm()
-        return render(request, 'EntryReservation.html', {'form': form})
-    else:
-        form = ReservationForm(request.POST)
-        if form.is_valid():
-            form.save()
-            return redirect('get_reservation', pk=form.instance.pk)
-        else:
-            return render(request, 'EntryReservation.html', {'form': form})
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        add_nav_context(context) 
+        return context
+    
 
-def get(request, pk):
-    try:
-        reservation = Reservation.objects.get(pk=pk)
-        return HttpResponse(reservation)
-    except Reservation.DoesNotExist:
-        return HttpResponseNotFound('<h1>Not Found</h1>')
-
-
-def car_set_reserved(request):
-    reservation = Reservation.objects.get(id=1)
-    reservation.reserved = True
-    reservation.save()
-    return HttpResponse("Car is now reserved")
-
-def update(request): # möglichkeit jeden wert anzupassen
-    reservation = Reservation.objects.get(id=1)
-    reservation.save()
-    return HttpResponse("Updated")
-
-def test(request):
-    return render(request, 'EntryReservation.html')
+def add_nav_context(context):
+    context["nav"] = "reservation"

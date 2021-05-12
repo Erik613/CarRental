@@ -18,10 +18,9 @@ class Car(models.Model):
     construction_date = models.SmallIntegerField()
     vehicle_type = models.CharField(max_length=100, default='SUV', choices=verhicle_types)     #SUV, Limosine, etc...
     is_automatic = models.BooleanField(default=False)
-    reserved = models.BooleanField(default=False)
 
     def __str__(self):
-        return f"{self.pk} - {self.brand} - {self.model_name} - ({self.license_plate})"
+        return f"{self.brand} - {self.model_name} - ({self.license_plate})"
         
 
 
